@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Django flatpages — {% block title %} {% endblock title %}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<!-- Core theme JS-->
+        <script src="{% static 'vendor/bootstrap/js/scripts.js' %}"></script>
+</head>
+
+<body>
+<!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://dummyimage.com/150x150/6c757d/dee2e6.jpg" alt="..." />
+                <h1 class="text-white fs-3 fw-bolder">Full Width Pics</h1>
+                <p class="text-white-50 mb-0">Landing Page Template</p>
+            </div>
+        </header>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/home">Django flatpages</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/home/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contacts/">Contact(только для зарегистрированных)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+       {% block content %}
+       {{ flatpage.content }}
+       {% endblock content %}
+      </div>
+    </div>
+  </div>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>
